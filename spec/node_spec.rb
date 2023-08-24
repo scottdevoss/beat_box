@@ -7,7 +7,6 @@ RSpec.describe Node do
     it 'is an instance of node' do
       node = Node.new("plop")
       expect(node).to be_instance_of(Node)
-      
     end
   end
 end
