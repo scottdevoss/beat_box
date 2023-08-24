@@ -2,7 +2,7 @@ class LinkedList
   attr_reader :head, :data, :next_node
   def initialize
     @head = nil
-    @data
+    @data 
     @next_node
 
   end
