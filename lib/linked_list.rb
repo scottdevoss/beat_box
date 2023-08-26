@@ -24,16 +24,22 @@ class LinkedList
 
   def count 
     count = 0
-    count += 1
+    current = @head
+    while current
+      count += 1
+      current = current.next_node
+    end
+    count
+    #require 'pry'; binding.pry
   end
 
   def to_string
   # start with empty string
     string = ""
-    if @head.nil?
-      string
-    else
-      string = string + @head.data #"doop"
+    current = @head
+    while current 
+      string << current.data
+      current = current.next_node
 
       #iterate until we get nil
       #add the nodes data to the string
@@ -45,7 +51,19 @@ end
 
 
 
+# def to_string
+#   # start with empty string
+#     string = ""
+#     if @head.nil?
+#       string
+#     else
+#       string = string + @head.data #"doop"
 
+#       #iterate until we get nil
+#       #add the nodes data to the string
+#     end 
+#     string
+#   end
 
 
 

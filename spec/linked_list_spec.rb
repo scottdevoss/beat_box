@@ -41,12 +41,18 @@ RSpec.describe LinkedList do
       list = LinkedList.new
       list.append("doop")
       expect(list.count).to eq(1)
+
+      list.append("deep")
+      expect(list.count).to eq(2)
     end
 
     it 'turns data to string' do
       list = LinkedList.new
       list.append("doop")
       expect(list.to_string).to eq("doop")
+
+      list.append("deep")
+      expect(list.to_string).to eq("doop deep")
     end
   end
 end
