@@ -12,6 +12,7 @@ RSpec.describe LinkedList do
       expect(list).to be_instance_of(LinkedList)
     end
 
+    #describe "#head"
     it 'has a head' do
       list = LinkedList.new
       #list.append("doop")
@@ -36,7 +37,32 @@ RSpec.describe LinkedList do
       expect(list.head.next_node.next_node).to be nil
     end
   
+    #describe "#prepend" do
+    it 'will add nodes to the beginning of the list' do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
 
+      list.prepend("dop")
+
+      expect(list.head.data).to eq("dop")
+      expect(list.head.next_node.data).to eq("plop")
+    end
+
+    #describe "#insert" do
+    it 'will insert one or more elements at a given position in the list' do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+
+      list.prepend("dop")
+
+      list.insert(1, "woo")
+
+      expect(list.to_string).to eq("dop woo plop suu")
+    end
+
+    #describe "#count" do
     it 'counts the nodes' do
       list = LinkedList.new
       list.append("doop")
@@ -46,6 +72,7 @@ RSpec.describe LinkedList do
       expect(list.count).to eq(2)
     end
 
+    #describe "#to_string" do
     it 'turns data to string' do
       list = LinkedList.new
       list.append("doop")

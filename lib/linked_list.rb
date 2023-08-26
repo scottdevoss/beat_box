@@ -22,6 +22,12 @@ class LinkedList
   
   end
 
+  def prepend(data)
+    new_node = Node.new(data)
+    new_node.next_node = @head
+    @head = new_node
+  end
+
   def count 
     count = 0
     current = @head
@@ -51,19 +57,7 @@ end
 
 
 
-# def to_string
-#   # start with empty string
-#     string = ""
-#     if @head.nil?
-#       string
-#     else
-#       string = string + @head.data #"doop"
 
-#       #iterate until we get nil
-#       #add the nodes data to the string
-#     end 
-#     string
-#   end
 
 
 
