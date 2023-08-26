@@ -64,7 +64,7 @@ class LinkedList
     string = ""
     current = @head
     while current 
-      string << current.data
+      string << current.data + " "
       current = current.next_node
 
       #iterate until we get nil
@@ -72,7 +72,6 @@ class LinkedList
     end 
     string
   end
-  
 end 
 
 
