@@ -9,15 +9,15 @@ class LinkedList
     
     if @head.nil?
       @head = Node.new(data)
+      #require 'pry'; binding.pry
     else 
       last_node = @head
       
-      # until last_node.next_node.nil?
-      #   last_node = lastNode.next_node
-      # end
+      until last_node.next_node.nil?
+        last_node = lastNode.next_node
+      end
       #We are at the end of the list
       last_node.next_node = Node.new(data)
-      # require 'pry'; binding.pry
     end 
   
   end

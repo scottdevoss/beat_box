@@ -18,15 +18,24 @@ RSpec.describe LinkedList do
       expect(list.head).to be_nil
     end
 
+   #describe "#append" do
     it 'add a new piece of data to list' do
       list = LinkedList.new
       list.append("doop")
       #list.append("deep")
       # require 'pry'; binding.pry
+      expect(list.head).to be_a Node
       expect(list.head.data).to eq("doop")
       expect(list.head.next_node).to be_nil
       expect(list).to be_instance_of(LinkedList)
+
+      list.append("deep")
+
+      expect(list.head.next_node).to be_a Node
+      expect(list.head.next_node.data).to eq("deep")
+      expect(list.head.next_node.next_node).to be nil
     end
+  
 
     it 'counts the nodes' do
       list = LinkedList.new
