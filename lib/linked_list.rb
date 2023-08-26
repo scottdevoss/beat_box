@@ -36,49 +36,60 @@ class LinkedList
       @head = new_node
     end
 
-    current = @head
+    current_node = @head
     (position - 1).times do 
-      break if current.nil?
-      current = current.next_node
+      break if current_node.nil?
+      current_node = current_node.next_node
     end
 
-    return if current.nil?
+    return if current_node.nil?
 
-    new_node.next_node = current.next_node
-    current.next_node = new_node
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
   end
 
   def count 
     count = 0
-    current = @head
-    while current
+    current_node = @head
+    while current_node
       count += 1
-      current = current.next_node
+      current_node = current_node.next_node
     end
     count
     #require 'pry'; binding.pry
   end
 
   def to_string
-  # start with empty string
-    string = ""
-    current = @head
-    while current 
-      string << current.data + " "
-      current = current.next_node
-
-      #iterate until we get nil
-      #add the nodes data to the string
-    end 
-    string
-  end
+    # start with empty string
+      string = ""
+      current_node = @head
+      while current_node 
+        string << current_node.data + " "
+        current_node = current_node.next_node
+  
+        #add the nodes data to the string
+      end 
+      string
+    end
 end 
 
 
 
 
+# def to_string
+#   # start with empty string
+#     return "" if @head == nil
+#     return @head.data if @head.next_node == nil
 
+#     the_beat = @head.data #doop
+#     current_node = @head.next_node #node instance with data of deep
 
+#     while current_node.next_node != nil do
+#       the_beat << " " + current_node.data
+#       current_node = current_node.next_node
+#     end
+#     the_beat << " " + current_node.data
+#   end
 
 
 
