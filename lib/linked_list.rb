@@ -1,5 +1,5 @@
-require './lib/node'
-require 'pry'
+# require './lib/node'
+# require 'pry'
 
 class LinkedList 
   attr_reader :head
