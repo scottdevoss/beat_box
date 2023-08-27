@@ -61,11 +61,23 @@ class LinkedList
   def count 
     count = 0
     current_node = @head
-    while current_node
+
+    if @head == nil 
+      count
+    else 
+      until current_node.next_node == nil
       count += 1
       current_node = current_node.next_node
+      end 
+      count += 1
     end
-    count
+      count 
+
+    # while current_node
+    #   count += 1
+    #   current_node = current_node.next_node
+    # end
+    # count
     #require 'pry'; binding.pry
   end
 
