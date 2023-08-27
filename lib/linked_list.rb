@@ -9,16 +9,16 @@ class LinkedList
     
     if @head.nil?
       @head = Node.new(data)
-      #require 'pry'; binding.pry
     else 
       last_node = @head
       
       until last_node.next_node.nil?
-        last_node = lastNode.next_node
+        last_node = last_node.next_node
       end
       #We are at the end of the list
       last_node.next_node = Node.new(data)
     end 
+    #require 'pry'; binding.pry
   
   end
 
@@ -43,6 +43,7 @@ class LinkedList
     end
 
     return if current_node.nil?
+   
 
     new_node.next_node = current_node.next_node
     current_node.next_node = new_node
@@ -71,6 +72,39 @@ class LinkedList
       end 
       string
     end
+
+    def find(start_position, count)
+      return "" if start_position < 0 || count <= 0
+      
+      result = ""
+      current = @head
+      position = 0
+      
+      while current && position < start_position + count
+        if position >= start_position
+          result << current.data
+        end
+        
+        current = current.next_node
+        position += 1
+      end
+      
+      result
+    end
+
+    def includes?(string)
+      node = @head
+      while node
+        return true if node.data == string
+        node = node.next_node
+      end
+      false
+    end
+
+    def pop
+      
+    end
+
 end 
 
 
