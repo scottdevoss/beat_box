@@ -15,7 +15,6 @@ RSpec.describe LinkedList do
     #describe "#head"
     it 'has a head' do
       list = LinkedList.new
-      #list.append("doop")
       expect(list.head).to be_nil
     end
 
@@ -23,8 +22,7 @@ RSpec.describe LinkedList do
     it 'add a new piece of data to list' do
       list = LinkedList.new
       list.append("doop")
-      #list.append("deep")
-      # require 'pry'; binding.pry
+      
       expect(list.head).to be_a Node
       expect(list.head.data).to eq("doop")
       expect(list.head.next_node).to be_nil

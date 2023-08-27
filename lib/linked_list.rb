@@ -92,23 +92,30 @@ class LinkedList
     end
 
 
-    def find(start_position, count)
-      return "" if start_position < 0 || count <= 0
+    def find(index, count)
+      return "" if index < 0 || count <= 0
       
-      result = ""
-      current = @head
-      position = 0
+      result = []
+      search = to_string.split
+      new_index = index + count - 1
+      #require 'pry'; binding.pry
+      result.push(search[index..new_index])
+      joined_result = result.join(" ")
+
+
+      # current = @head
+      # position = 0
       
-      while current && position < start_position + count
-        if position >= start_position
-          result << current.data
-        end
+      # while current && position < start_position + count
+      #   if position >= start_position
+      #     result << current.data
+      #   end
         
-        current = current.next_node
-        position += 1
-      end
+      #   current = current.next_node
+      #   position += 1
+      # end
       
-      result
+      # result.join(" ")
     end
 
     def includes?(string)
