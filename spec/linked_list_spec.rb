@@ -1,5 +1,6 @@
 require "./lib/linked_list"
 require './lib/node'
+require './lib/beat_box'
 require 'rspec'
 require 'pry'
 
@@ -116,5 +117,22 @@ RSpec.describe LinkedList do
     end
 
   end 
+
+    #describe "#BeatBox" do
+    it 'is an instance of BeatBox' do
+      bb = BeatBox.new
+      list = LinkedList.new
+
+      expect(bb).to be_instance_of(BeatBox)
+    end
   
+
+    #describe "#bb append" do
+    it 'splits the string' do
+      bb = BeatBox.new
+      list = LinkedList.new
+      bb.append("deep doo ditt")
+
+      expect(bb.list.head.data).to eq("deep")
+    end
 end
