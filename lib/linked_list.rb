@@ -18,16 +18,7 @@ class LinkedList
       end
       current_node.next_node = new_node
     end 
-    # if @head.nil?
-    #   @head = Node.new(data)
-    # else 
-    #   last_node = @head
-      
-    #   until last_node.next_node.nil?
-    #     last_node = last_node.next_node
-    #   end
-    #   #We are at the end of the list
-    #   last_node.next_node = Node.new(data)
+    
   
   end
 
@@ -66,12 +57,12 @@ class LinkedList
       count
     else 
       until current_node.next_node == nil
-      count += 1
-      current_node = current_node.next_node
+        count += 1
+        current_node = current_node.next_node
       end 
       count += 1
     end
-      count 
+    count 
 
     # while current_node
     #   count += 1
@@ -90,68 +81,60 @@ class LinkedList
       string_node = string_node.next_node
     end
     string_words.join(" ")
+  end 
 
-    # # start with empty string
-    #   string = ""
-    #   current_node = @head
-    #   while current_node 
-    #     string << current_node.data + " "
-    #     current_node = current_node.next_node
+    
+
+
+  def find(index, count)
+    return "" if index < 0 || count <= 0
   
-    #     #add the nodes data to the string
-    #   end 
-    #   string
+    result = []
+    search = to_string.split
+    new_index = index + count - 1
+    #require 'pry'; binding.pry
+    result.push(search[index..new_index])
+    joined_result = result.join(" ")
+    
+
+
+    # current = @head
+    # position = 0
+    
+    # while current && position < start_position + count
+    #   if position >= start_position
+    #     result << current.data
+    #   end
+      
+    #   current = current.next_node
+    #   position += 1
+    # end
+    
+    # result.join(" ")
+  end
+
+  def includes?(string)
+    node = @head
+    while node
+      return true if node.data == string
+      node = node.next_node
     end
+    false
+  end
 
+  def pop
+    node = @head
+    return nil if node.nil?
 
-    def find(index, count)
-      return "" if index < 0 || count <= 0
-      
-      result = []
-      search = to_string.split
-      new_index = index + count - 1
-      #require 'pry'; binding.pry
-      result.push(search[index..new_index])
-      joined_result = result.join(" ")
-
-
-      # current = @head
-      # position = 0
-      
-      # while current && position < start_position + count
-      #   if position >= start_position
-      #     result << current.data
-      #   end
-        
-      #   current = current.next_node
-      #   position += 1
-      # end
-      
-      # result.join(" ")
-    end
-
-    def includes?(string)
-      node = @head
-      while node
-        return true if node.data == string
+    if node.next_node == nil
+      next_node
+    else
+      until node.next_node.nil?
         node = node.next_node
       end
-      false
+      node.data
     end
-
-    def pop
-      node = @head
-      return nil if node.nil?
-
-      if node.next_node == nil
-        next_node
-      else
-        until node.next_node.nil?
-          node = node.next_node
-        end
-        node.data
-      end
-    end
+  end
 
 end 
 
