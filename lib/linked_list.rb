@@ -8,33 +8,33 @@ class LinkedList
   end
 
   def append(data)
-    new_node = Node.new(data)
-    if @head == nil
-      @head = new_node
+    new_node = Node.new(data) #make a new node
+    if @head == nil           #check if the node has a head
+      @head = new_node        #if there is no head, make the new node the head
     else
       current_node = @head
-      until current_node.next_node == nil
-        current_node = current_node.next_node
+      until current_node.next_node == nil      #if there is a head, see if it points to another node
+        current_node = current_node.next_node   #access the next node in a loop until we get nil
       end
-      current_node.next_node = new_node
+      current_node.next_node = new_node       #the current nodes next node is the new node
     end 
   end
 
   def prepend(data)
-    new_node = Node.new(data)
-    new_node.next_node = @head
+    new_node = Node.new(data)     #make a new node
+    new_node.next_node = @head    #set the new nodes next node to the head
     @head = new_node
   end
 
   def insert(position, data)
-    new_node = Node.new(data)
+    new_node = Node.new(data)  #make a new node
 
-    if position == 0
+    if position == 0            #if position == 0, the new nodes next node is set to the head
       new_node.next_node = @head
       @head = new_node
     end
 
-    current_node = @head
+    current_node = @head          #still need practice talking through this one
     (position - 1).times do 
       break if current_node.nil?
       current_node = current_node.next_node
@@ -47,19 +47,19 @@ class LinkedList
   end
 
   def count 
-    count = 0
-    current_node = @head
+    count = 0        #set the count to 0
+    current_node = @head       #set the current node to the head
 
-    if @head == nil 
+    if @head == nil        #if the head is nil, return count
       count
     else 
-      until current_node.next_node == nil
+      until current_node.next_node == nil  #loop until the current nodes next node is equal to nil then add 1 to the count
         count += 1
         current_node = current_node.next_node
       end 
       count += 1
     end
-    count 
+    count                 #return final count
   end
 
   def to_string
