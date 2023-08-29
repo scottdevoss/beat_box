@@ -63,29 +63,29 @@ class LinkedList
   end
 
   def to_string
-    string_node = @head
-    string_words = []
+    string_node = @head         #set a variable to our head
+    string_words = []           #create empty array
     while string_node
-      string_data = string_node.data.to_s
+      string_data = string_node.data.to_s   #turn the heads data to a string and shovel into empty array
       string_words << string_data
       string_node = string_node.next_node
     end
-    string_words.join(" ")
+    string_words.join(" ")          #join the string of arrays together with a space. 
   end 
 
   def find(index, count)
-    return "" if index < 0 || count <= 0
+    return "" if index < 0 || count <= 0  #default any errors
   
     result = []
     search = to_string.split
-    new_index = index + count - 1
+    new_index = index + count - 1           #I had a mentor help with this and I am still a little confused how to describe it. 
     result.push(search[index..new_index])
     joined_result = result.join(" ")
   end
 
   def includes?(string)
     node = @head
-    while node
+    while node                          #while we are at the head, loop through and return the nodes data if it is equal to the string variable. 
       return true if node.data == string
       node = node.next_node
     end
@@ -94,18 +94,17 @@ class LinkedList
 
   def pop
     node = @head
-    return nil if node.nil?
+    return nil if node.nil?    #return nil if the node is nil
 
-    if node.next_node == nil
+    if node.next_node == nil    
       next_node
     else
-      until node.next_node.nil?
+      until node.next_node.nil? #loop through until the nodes next node is nil and return the nodes data. 
         node = node.next_node
       end
       node.data
     end
   end
-
 end 
 
 # binding.pry
