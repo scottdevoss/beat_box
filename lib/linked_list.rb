@@ -18,8 +18,6 @@ class LinkedList
       end
       current_node.next_node = new_node
     end 
-    
-  
   end
 
   def prepend(data)
@@ -43,8 +41,7 @@ class LinkedList
     end
 
     return if current_node.nil?
-   
-
+  
     new_node.next_node = current_node.next_node
     current_node.next_node = new_node
   end
@@ -63,13 +60,6 @@ class LinkedList
       count += 1
     end
     count 
-
-    # while current_node
-    #   count += 1
-    #   current_node = current_node.next_node
-    # end
-    # count
-    #require 'pry'; binding.pry
   end
 
   def to_string
@@ -83,34 +73,14 @@ class LinkedList
     string_words.join(" ")
   end 
 
-    
-
-
   def find(index, count)
     return "" if index < 0 || count <= 0
   
     result = []
     search = to_string.split
     new_index = index + count - 1
-    #require 'pry'; binding.pry
     result.push(search[index..new_index])
     joined_result = result.join(" ")
-    
-
-
-    # current = @head
-    # position = 0
-    
-    # while current && position < start_position + count
-    #   if position >= start_position
-    #     result << current.data
-    #   end
-      
-    #   current = current.next_node
-    #   position += 1
-    # end
-    
-    # result.join(" ")
   end
 
   def includes?(string)

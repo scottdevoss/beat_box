@@ -6,7 +6,6 @@ require 'rspec'
 
 RSpec.describe LinkedList do
   describe '#initialize' do
-
     it 'is an instance of linked list' do
       list = LinkedList.new
       list.append("doop")
@@ -19,7 +18,7 @@ RSpec.describe LinkedList do
       expect(list.head).to be_nil
     end
 
-   #describe "#append" do
+    #describe "#append" do
     it 'add a new piece of data to list' do
       list = LinkedList.new
       list.append("doop")
@@ -115,8 +114,5 @@ RSpec.describe LinkedList do
 
       expect(list.pop).to eq("blop")
     end
-
   end 
-
-    
 end

@@ -18,7 +18,6 @@ class BeatBox
   def count
     list.count
   end
-  
 
   def play
     list.to_string

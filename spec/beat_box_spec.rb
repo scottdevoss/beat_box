@@ -9,9 +9,9 @@ RSpec.describe BeatBox do
 
     #describe "#BeatBox" do
     it 'is an instance of BeatBox' do
-    bb = BeatBox.new
+      bb = BeatBox.new
 
-    expect(bb).to be_instance_of(BeatBox)
+      expect(bb).to be_instance_of(BeatBox)
     end
   end 
 
@@ -20,18 +20,16 @@ RSpec.describe BeatBox do
     bb = BeatBox.new
     
     bb.append("deep doo ditt")
-  # binding.pry
+  
     expect(bb.list.head.data).to eq("deep")
     expect(bb.list.head.next_node.data).to eq("doo")
   end 
 
-  # it 'plays sounds' do
+  #describe 'plays sounds' do
   it 'plays sounds' do
     bb = BeatBox.new
-    bb.append("deep doo ditt")
+    bb.append("deep doo ditt woo hoo shu")
 
     expect(bb.play).to be_empty
   end
-  
-
 end
